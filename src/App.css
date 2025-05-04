@@ -1,0 +1,36 @@
+
+@font-face {
+  font-family: 'Inter';
+  /* src: url('../fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf'); */
+  src: url('../public/fonts/Inter_18pt-Bold.ttf')format('truetype')
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+.container h1{
+  padding-bottom: 20px;
+  font-family: Inter;
+  font-size:40px;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 20px;
+  /* background-color: red; */
+  width: 70%;
+}
+
+@media screen and (max-width: 500px)  {
+  .form{
+      width: 100%;
+  }
+}

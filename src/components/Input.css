@@ -1,0 +1,89 @@
+.form-control{
+    color: #101928;
+    display:flex;
+    flex-direction: column;
+    /* width: 150%; */
+    position: relative;
+    flex-grow: 1;
+    
+}
+
+.form-control label{
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+
+.form-control input, 
+.form-control select,
+.form-control textarea{
+    background-color: #fff;
+    border: 1px solid #D0D5DD;
+    border-radius: 6px;
+    color: #667185;
+    padding: 16px;
+    box-shadow: 0px 5px 3px -2px #00000005;
+    box-shadow: 0px 3px 2px -2px #0000000F;
+}
+
+.form-control select{
+    appearance: none;
+    /* content: ""; */
+    /* position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    background-image: url('../../public/icons/chevron-down.svg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; */
+
+}
+
+
+
+.form-control select::after{    
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    background-image: url('../../public/icons/chevron-down.svg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form-control textarea{
+    height: 89px;
+}
+
+.file-upload{
+    border: 1.5px dotted #EDEDF2;
+    /* border: 1.5px dashed blue; */
+    padding: 15px 24px;
+    font-size: 14px;
+}
+
+.file-upload p span {
+    color:#F8931F;
+}
+
+.file-upload p{
+    color:#667185;
+
+}
+
+.file-upload p:last-child{
+    color:#98A2B3;
+}
+
+.file-upload-input{
+    display: none;
+}

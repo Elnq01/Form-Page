@@ -1,0 +1,12 @@
+.form{
+    background-color: #ffff;
+    /* height: 200px; */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E4E7EC;
+    border-radius: 4px;
+    padding: 16px;
+    row-gap: 20px;
+    width: 100%;
+}
+
