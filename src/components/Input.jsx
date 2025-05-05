@@ -1,9 +1,12 @@
 import './Input.css';
 import uploadImage from '../../public/upload image.svg'
 import { useFormControl } from '../state/state';
+import { useRef } from 'react';
 // import uploadImageText from '../../public/texts.svg'
 
-const InputControl = ({id, label, type, inputName, placeholder, required, description }) => {
+const InputControl = ({ label, type, inputName, placeholder, required, description }) => {
+
+    const inputFileRef = useRef(null);
 
     let formControlLogic = useFormControl('')
 
@@ -12,7 +15,7 @@ const InputControl = ({id, label, type, inputName, placeholder, required, descri
 
     switch(type){ 
         case 'text':
-            InputUI = <input {...formControlLogic} type={type} name={inputName} placeholder={placeholder}  />
+            InputUI = <input required {...formControlLogic} type={type} name={inputName} placeholder={placeholder}  />
             break;
 
         case 'select':
@@ -28,8 +31,8 @@ const InputControl = ({id, label, type, inputName, placeholder, required, descri
 
         default:
             InputUI = (<>
-                        <input {...formControlLogic} className='file-upload-input' type="file" name={inputName}  />
-                        <div className='file-upload'>
+                        <input ref={inputFileRef} {...formControlLogic} className='file-upload-input' type="file" name={inputName}  />
+                        <div className='file-upload' style={{cursor:'pointer'}} onClick={()=> { inputFileRef.current.click()}}>
                            <img src={uploadImage} alt="upload image" /> 
                            {/* <p><img src={uploadImageText} alt="upload image text" /> or drag and drop</p> */}
                            <p><span>click to upload</span> or drag and drop</p>
@@ -38,7 +41,7 @@ const InputControl = ({id, label, type, inputName, placeholder, required, descri
                     </>)
     }
 
-    return <div key={id} className={`form-control`}>
+    return <div className={`form-control`}>
             <label>{label}{required?<span style={{color:'red'}}>*</span>:''}</label>
             {required?
                 <p 

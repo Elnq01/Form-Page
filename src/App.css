@@ -26,11 +26,17 @@
   justify-content: center;
   column-gap: 20px;
   /* background-color: red; */
-  width: 70%;
+  width: 80%;
 }
 
-@media screen and (max-width: 500px)  {
+
+@media screen and (max-width: 800px) {
   .form{
-      width: 100%;
+    width: auto !important;
+  }
+
+  .form-container{
+    flex-direction: column;
+    row-gap: 70px;
   }
 }

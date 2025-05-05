@@ -14,33 +14,33 @@ function App() {
   const [state, formAction, pending] = useActionState(submit, {nametitle:'', error:"", description:''})
 
 
-  useEffect(()=>{
-   const formElements = formRef.current.elements;
-   console.log("The error: ", state)
+  // useEffect(()=>{
+  //  const formElements = formRef.current.elements;
+  //  console.log("The error: ", state)
 
-  //  Validation
-    for(let element of formElements){
-        element.setCustomValidity("");
-    } 
+  // //  Validation
+  //   for(let element of formElements){
+  //       element.setCustomValidity("");
+  //   } 
 
 
-    if(state.error){
-      let inputControl = null;
+  //   if(state.error){
+  //     let inputControl = null;
 
-      for(let element of formElements){
-        if(element.name == state.nametitle){
-          inputControl = element
-          inputControl.focus()
-          // inputControl.setCustomValidity(state.error);
-        }
-      }  
+  //     for(let element of formElements){
+  //       if(element.name == state.nametitle){
+  //         inputControl = element
+  //         inputControl.focus()
+  //         // inputControl.setCustomValidity(state.error);
+  //       }
+  //     }  
 
-      if(inputControl){
-        console.log("Personal: ", inputControl)
-        // inputControl.reportValidity();
-      }
-    }
-  },[state, formRef])
+  //     if(inputControl){
+  //       console.log("Personal: ", inputControl)
+  //       // inputControl.reportValidity();
+  //     }
+  //   }
+  // },[state, formRef])
 
 
 
@@ -51,13 +51,13 @@ function App() {
       {/* form element */}
       <form  ref={formRef} action={formAction} className='form-container'>{/*action attributes*/}
         <FormSection>
-          {formData1.map(formcontrol => (<Input {...formcontrol} />))}
+          {formData1.map(formcontrol => (<Input key={formcontrol.id}  {...formcontrol} />))}
         </FormSection>
         
         <FormSection>
-          {formData2.map(formcontrol => <Input {...formcontrol} />)}
+          {formData2.map(formcontrol => <Input key={formcontrol.id} {...formcontrol} />)}
           {state.error? <p>{state.error}</p>:""}
-          {pending? <p>Loading...</p>:<p>{state.description}</p>}
+          {pending? <p>Loading...</p>:<p style={{color:'green'}}>{state.description}</p>}
         </FormSection> 
         <button style={{display:'none'}} type="submit">Submit</button>
       </form>

@@ -27,7 +27,7 @@
 }
 
 .form-control select{
-    appearance: none;
+    /* appearance: none; */
     /* content: ""; */
     /* position: absolute;
     top: 50%;
@@ -65,7 +65,7 @@
 }
 
 .file-upload{
-    border: 1.5px dotted #EDEDF2;
+    border: 1.8px dashed #EDEDF2;
     /* border: 1.5px dashed blue; */
     padding: 15px 24px;
     font-size: 14px;
